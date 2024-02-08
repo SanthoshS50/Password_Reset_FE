@@ -2,6 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Box, Typography, Container } from "@mui/material";
 import { toast } from "react-toastify";
+import { createTheme } from "@mui/material/styles";
+
+const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+  },
+});
 
 const Home = () => {
   const userData = JSON.parse(sessionStorage.getItem("userData"));
@@ -29,10 +36,9 @@ const Home = () => {
           alignItems: "center",
           justifyContent: "center",
           height: "100vh",
-          color: "white",
+          backgroundColor: lightTheme.palette.background.default,
+          color: lightTheme.palette.text.primary,
           padding: "20px",
-          margin: "0 ",
-          boxSizing: "border-box",
           textAlign: "center",
           overflowY: "hidden",
         }}
